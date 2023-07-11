@@ -54,4 +54,4 @@ Contributions to the QR code generator are welcome! If you find any bugs or want
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute this code as per the terms of the license.
+This project is licensed under the [GNU General Public License v3.0](LICENSE). Feel free to modify and distribute this code as per the terms of the license.
