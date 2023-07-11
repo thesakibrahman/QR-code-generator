@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Codes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id ="border" class = "fadeInLeft">
+        <div id ="content">
+        <header>
+            <h1>Generate Your Own QR Code</h1>
+        </header>       
+        <div class ="textbox">
+        <textarea id="QR_Input" name="QR_Input" type = "text" value = "1" rows = "1" cols= "33" placeholder="write here..."></textarea>
+        </div>
+        <div class = "buttons">
+            <button id="submitButton" onclick="displayQrCodeInfo()" >Generate</button>
+            <button id="startOverButton" style="background-color:#0432b3" onclick="startOver()">Reset</button>
+        </div>
+        <div id = "outputBorder">
+        <span>
+            <div id="output" ></div>
+        </span> 
+        </div>       
+        <span id = "saveMessage">
+        </span>
+    </div>
+</div>    
+<script>
+    function displayQrCodeInfo() {
+        let ibsCode = document.getElementById("QR_Input").value; 
+        let display = document.getElementById("output"); 
+                if(ibsCode !== ""){
+                    let qrcode = new QRCode("output", {
+            text: ibsCode,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        }       
+        if(ibsCode !== ""){
+        displayMessage();
+        disableBtn();
+        }
+}
+function disableBtn() {
+    document.getElementById("submitButton").disabled = true;
+}
+function startOver() {
+    let qrInput = document.getElementById("QR_Input");
+    let qrCode = document.getElementById("output");
+    let newdiv = document.createElement("SPAN");
+    let deleteText = document.getElementById("message");    
+    let span = document.querySelector("span");
+    newdiv.setAttribute("id", "output");
+    span.appendChild(newdiv);
+    qrInput.value = '';
+    if(deleteText){
+    deleteText.parentNode.removeChild(deleteText);
+    }
+    qrCode.parentNode.removeChild(qrCode);
+    document.getElementById("submitButton").disabled = false;
+}
+function displayMessage(){
+    let display = document.getElementById("output");
+    let message = document.createElement("p");
+    let span = document.getElementById('saveMessage');      
+        message.setAttribute("id", "message");
+        message.innerText = "Mouse Right click to save image!";
+        span.appendChild(message);   
+}              
+    </script>
+

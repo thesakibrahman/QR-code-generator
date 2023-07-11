@@ -1,0 +1,170 @@
+/* view in fullscreen for best look */
+
+body {
+    text-align: center;
+    letter-spacing: 1.5px;
+    font-family: 'Staatliches', cursive;
+	  background: #b80de7; /* fallback for old browsers */
+  	background: -webkit-linear-gradient(to right, #c30ed7, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+  	background: linear-gradient(to right, #b80fe3, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+    font-size: 40px;
+}
+
+button {
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-block;
+    padding:0.7em 1.4em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:10px;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    text-transform:uppercase;
+    color:#f7f7f7;
+    background-color:#b211d2;
+    box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+    text-align:center;
+    position:relative;
+}
+
+button:active{
+top:0.1em;
+    }
+    button:hover{
+        background-color:#2111d2;
+
+    }
+
+
+@media all and (max-width:30em){
+     button{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+@media (max-width: 600px){
+    #border{
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+div img {
+    width:200px;
+    height:200px;
+    margin-top:15px;
+    display: inline-block !important;
+    border-radius: 10px;
+  }
+
+#outputBorder {
+    height:230px;
+    width: 230px;
+    
+    /* border: 1px solid black; */
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0,0,0, 0.2);
+    
+    
+}
+
+#content {
+    padding: 5%;
+    box-sizing: content-box;
+    width: auto;
+    
+  }
+
+
+#QR_Input {
+    height: 20px;
+    position: relative;
+    border: 2px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .14);
+    background-color: AliceBlue;
+    font-size: 14px;
+    border-radius: 10px;
+    height: 200px;
+}
+
+#border {
+    text-align: center;
+    width: 600px;
+    height: 600px;
+    background-color:#f7f7f7;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0, 0.5);
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+} 
+    
+   
+#QR_Input {
+    height: 20px;
+    position: relative;
+    border: 2px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .14);
+    background-color: AliceBlue;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+#QR_Input {
+    width: 85%;
+    height: 40px;
+}
+
+
+#submitButton {
+    margin-right: 25px;
+}
+
+.buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+@-webkit-keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       -webkit-transform: translate(-70%, -50%);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translate(-50%, -50%);
+    }
+ }
+ 
+ @keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translate(-70%, -50%);
+    }
+    100% {
+       opacity: 1;
+       transform: translate(-50%, -50%);
+    }
+ }
+ 
